@@ -9,11 +9,13 @@ def show
 end
 
 def new
+  @robot = Robot.new
 
 end
 
 def create
-
+  @robot = Robot.new(name: params[:name], functions: params[:functions], caracteristics: params[:caracteristics], price: params[:price])
+  @robot.save
 end
 
 def edit
