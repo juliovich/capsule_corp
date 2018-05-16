@@ -5,7 +5,7 @@
       <p><%= @robot.functions %></p>
       <p><%= @robot.caracteristics %></p>
     </div>
-    <div class="robot-picture-bouton">
+    <div class="robot-picture-button">
       <%= image_tag "BB-8_Clean_legal_line_1024x1024.jpg", id: "robot-picture" %>
       <div class="price-and-button">
         <p><%= @robot.price %></p>
@@ -13,13 +13,15 @@
       </div>
     </div>
   </div>
+  <hr>
   <div>formulaire saisi avec un collapse sur le bouton "Book me"
-    <%= simple_form_for [@robot, @booking] do |f| %>
-      <%= f.input :beginning_of_rental %>
-      <%= f.input :end_of_rental %>
-      <%= f.submit "book my robot", class: "btn btn-primary" %>
-    <%= end %>
+    <h4>When do you want to book this robot ?</h4>
+    <p>From this day</p>
+
+    <p>To this day</p>
+    <a href="#" class="btn btn-primary">Finalize the order</a>
   </div>
+  <hr>
   <div>
     <div>Reviews</div>
     <div>Reviews'cards</div>
