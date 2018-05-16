@@ -25,7 +25,7 @@ puts 'Creating 10 fake users...'
       caracteristics: Faker::Internet.slug,
       price: (1000..10000).to_a.sample,
       user: user,
-      name: Faker::Hipster.words
+      name: "#{Faker::Hipster.words.first}##{rand(1..1000)}"
     )
     robot.save!
   end
@@ -33,26 +33,3 @@ puts 'Creating 10 fake users...'
 end
 puts 'Finished!'
 
-
-Robot.destroy_all
-
-robots_attributes = [
- {
-   functions: "Home care",
-   caracteristics: "T1000",
-   price: "80000",
-   user_id: 2,
-   name: "Bender"
- },
- {
-   functions: "Security",
-   caracteristics: "T 800",
-   price: "10000",
-   user_id: 2,
-   name: "Astro"
- }
-]
-robots_attributes.each do |robot_attributes|
- puts "Creating robot..."
- robot = Robot.create!(robot_attributes)
-end

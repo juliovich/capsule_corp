@@ -1,8 +1,21 @@
-<% @robots.each do |robot| %>
-  <p><%= robot.name %></p>
-  <p><%= robot.price %></p>
-  <p><%= robot.functions %></p>
-  <p><%= robot.caracteristics %></p>
-<% end %>
+<h1> All of our robots </h1>
+
+
+<ul>
+  <% @robots.each do |robot| %>
+    <li>
+      <p>
+        <%= link_to robot.name, robot_path(robot) %>
+        <br>
+        price: <%= robot.price %>
+        <br>
+        functions: <%= robot.functions %>
+        <br>
+        caracteristics: <%= robot.caracteristics %>
+      </p>
+
+    </li>
+  <% end %>
+</ul>
 
 
