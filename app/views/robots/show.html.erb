@@ -1,23 +1,24 @@
-<h3><%= @robot.name %></h3>
- <p><%= @robot.price %></p>
- <p><%= @robot.functions %></p>
- <p><%= @robot.caracteristics %></p>
-
-
-
 <div class="container">
   <div>
-    <div class="robot-details">Nom + details du robot
+    <div class="robot-details">
       <h3><%= @robot.name %></h3>
       <p><%= @robot.functions %></p>
       <p><%= @robot.caracteristics %></p>
-      <p><%= @robot.price %></p>
-      <p><%= @robot. %></p>
     </div>
-    <div class="robot-picture-bouton">photo du robot + bouton pour collapse</div>
+    <div class="robot-picture-bouton">
+      <%= image_tag @robot.photo.url, id: "robot-picture" %>
+      <div class="price-and-button">
+        <p><%= @robot.price %></p>
+        <a href="#" class="btn btn-info">Book me</a>
+      </div>
+    </div>
   </div>
-  <div>
-    form de resa
+  <div>formulaire saisi avec un collapse sur le bouton "Book me"
+    <%= simple_form_for [@robot, @booking] do |f| %>
+      <%= f.input :beginning_of_rental %>
+      <%= f.input :end_of_rental %>
+      <%= f.submit "book my robot", class: "btn btn-primary" %>
+    <%= end %>
   </div>
   <div>
     <div>Reviews</div>
