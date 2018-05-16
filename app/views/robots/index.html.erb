@@ -1,21 +1,28 @@
-<h1> All of our robots </h1>
+<div>
+  <div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'robot-and-human-team.jpg' %>') no-repeat center; background-size: cover;">
+      <div class="banner-content">
+        <h1>CAPSULE CORPORATION</h1>
+        <p>More human than human, every days we are building a better world for you.</p>
+        <a class="btn-treehouse btn-lg">Start now</a>
+      </div>
+    </div>
+    <ul>
+      <h1> All of our robots </h1>
+      <% @robots.each do |robot| %>
+        <li>
+          <p>
+            <%= link_to robot.name, robot_path(robot) %>
+            <br>
+            price: <%= robot.price %>
+            <br>
+            functions: <%= robot.functions %>
+            <br>
+            caracteristics: <%= robot.caracteristics %>
+          </p>
 
-
-<ul>
-  <% @robots.each do |robot| %>
-    <li>
-      <p>
-        <%= link_to robot.name, robot_path(robot) %>
-        <br>
-        price: <%= robot.price %>
-        <br>
-        functions: <%= robot.functions %>
-        <br>
-        caracteristics: <%= robot.caracteristics %>
-      </p>
-
-    </li>
-  <% end %>
-</ul>
+        </li>
+      <% end %>
+    </ul>
+</div>
 
 
