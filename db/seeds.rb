@@ -25,11 +25,18 @@ puts 'Creating 10 fake users...'
       caracteristics: Faker::Internet.slug,
       price: (1000..10000).to_a.sample,
       user: user,
+<<<<<<< HEAD
       name: "#{Faker::Hipster.words.first}##{rand(1..1000)}"
+=======
+      name: Faker::Hipster.word
+>>>>>>> 8398cdf7c3cba36d60a2a4384b32f23c8eecb106
     )
     robot.save!
   end
   puts 'Finished!'
 end
 puts 'Finished!'
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8398cdf7c3cba36d60a2a4384b32f23c8eecb106
