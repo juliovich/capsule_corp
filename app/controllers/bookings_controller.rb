@@ -15,6 +15,8 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(robot_id: params["robot_id"], user_id: params["user_id"])
     @booking.save
+
+    # redirect_to user_path(params[:user_id])
   end
 
   def edit
