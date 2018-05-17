@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 2018_05_15_145937) do
   end
 
   create_table "robots", force: :cascade do |t|
-    t.integer "price"
     t.string "functions"
     t.string "caracteristics"
+    t.integer "price"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
