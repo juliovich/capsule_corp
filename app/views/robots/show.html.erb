@@ -19,9 +19,8 @@
     <%= simple_form_for (@booking) do |f| %>
       <%= f.text_field :beginning_of_rental, hide_label: true, class: 'datepicker' %></p>
       <%= f.text_field :end_of_rental, hide_label: true, class: 'datepicker' %></p>
+      <%= f.submit "finalize the order", class: "btn btn-primary" %>
     <% end %>
-
-    <%= link_to "complete the booking", profile_path, class: "btn btn-primary" %>
   </div>
   <hr>
   <div>
@@ -29,4 +28,3 @@
     <div>Reviews'cards</div>
   </div>
 </div>
-
