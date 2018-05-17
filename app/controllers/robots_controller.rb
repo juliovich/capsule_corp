@@ -1,7 +1,11 @@
 class RobotsController < ApplicationController
 
 def index
-  @robots = Robot.all
+  if params[:query].present?
+      @robots = Robot.where(functions: params[:query])
+  else
+      @robots = Robot.all
+  end
 end
 
 def show

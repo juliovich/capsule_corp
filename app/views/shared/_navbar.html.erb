@@ -1,9 +1,17 @@
 <div class="navbar-wagon">
   <!-- Logo -->
+<div class="left">
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png", height: 100 %>
   <% end %>
-
+  <%= form_tag robots_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a robot"
+      %>
+  <% end %>
+  </div>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
