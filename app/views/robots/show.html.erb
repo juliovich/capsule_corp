@@ -16,9 +16,12 @@
   <hr>
   <div>formulaire saisi avec un collapse sur le bouton "Book me"
     <h4>When do you want to book this robot ?</h4>
-    <p>From this day</p>
+    <%= simple_form_for (@booking) do |f| %>
+      <%= f.text_field :beginning_of_rental, hide_label: true, class: 'datepicker' %></p>
+      <%= f.text_field :end_of_rental, hide_label: true, class: 'datepicker' %></p>
+    <% end %>
 
-    <p>To this day</p>
+
     <a href="#" class="btn btn-primary">Finalize the order</a>
   </div>
   <hr>
