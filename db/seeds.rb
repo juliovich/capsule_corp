@@ -7,52 +7,42 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+Booking.destroy_all
 Robot.destroy_all
 User.destroy_all
 
-puts 'Creating 10 fake users...'
-10.times do
-  user = User.new(
+puts "Creating one User!"
+5.times do
+  user = User.create!(
     email:    Faker::Internet.email,
     password: Faker::Internet.password(8),
     owner: true
   )
-  user.save!
-  puts 'Creating 10 fake robots...'
-  10.times do
-    robot = Robot.new(
+  5.times do
+    robot = Robot.create!(
       functions: Faker::Hobbit.thorins_company,
       caracteristics: Faker::Internet.slug,
       price: (1000..10000).to_a.sample,
       user: user,
       name: Faker::Hipster.words
     )
-    robot.save!
   end
-  puts 'Finished!'
 end
-puts 'Finished!'
+puts 'Robots & Users Finished!'
 
-
-Robot.destroy_all
-
-robots_attributes = [
- {
-   functions: "Home care",
-   caracteristics: "T1000",
-   price: "80000",
-   user_id: 2,
-   name: "Bender"
- },
- {
-   functions: "Security",
-   caracteristics: "T 800",
-   price: "10000",
-   user_id: 2,
-   name: "Astro"
- }
-]
-robots_attributes.each do |robot_attributes|
- puts "Creating robot..."
- robot = Robot.create!(robot_attributes)
+10.times do
+  user = User.create!(
+    email:    Faker::Internet.email,
+    password: Faker::Internet.password(8),
+    owner: false
+  )
+  book_rand= rand(0..7)
+  book_rand.times do
+    booking = Booking.create!(
+      beginning_of_rental: Faker::Date.backward(33),
+      end_of_rental: Faker::Date.forward(23),
+      user: user,
+      robot: Robot.all.to_a.sample
+    )
+  end
 end
