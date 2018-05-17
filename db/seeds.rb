@@ -17,7 +17,7 @@ puts "Creating one User!"
       caracteristics: Faker::Internet.slug,
       price: (1000..10000).to_a.sample,
       user: user,
-      name: Faker::Hipster.words
+      name: Faker::Name.name
     )
   end
 end
