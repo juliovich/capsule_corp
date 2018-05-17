@@ -6,6 +6,7 @@ end
 
 def show
   @robot = Robot.find(params[:id])
+  @booking = Booking.new
 end
 
 def new
@@ -27,7 +28,8 @@ def update
 end
 
 def destroy
-
+  @robot = Robot.find(params[:id])
+  @robot.destroy
 end
 
 end

@@ -13,7 +13,8 @@ class BookingsController < ApplicationController
   end
 
   def create
-
+    @booking = Booking.new(robot_id: params["robot_id"], user_id: params["user_id"])
+    @booking.save
   end
 
   def edit
@@ -27,5 +28,6 @@ class BookingsController < ApplicationController
   def destroy
 
   end
+
 
 end
