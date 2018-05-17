@@ -12,15 +12,19 @@
   <div class="row">
     <% @robots.each do |robot| %>
       <div class="col-md-4">
-        <p>
-          <%= link_to robot.name, robot_path(robot) %>
-          <br>
-          price: <%= robot.price %>
-          <br>
-          functions: <%= robot.functions %>
-          <br>
-          caracteristics: <%= robot.caracteristics %>
-        </p>
+        <div class="card">
+          <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(<%= image_path 'Fotolia_31943186_Subscription_XL-1078x800.jpg' %>);">
+            <span class="card-category"><%= link_to robot.name, robot_path(robot) %></span>
+          </div>
+          <div class="card-footer">
+            <br>
+            price: <%= robot.price %>
+            <br>
+            functions: <%= robot.functions %>
+            <br>
+            caracteristics: <%= robot.caracteristics %>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
