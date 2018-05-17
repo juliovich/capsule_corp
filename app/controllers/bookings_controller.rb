@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(robot_id: params["robot_id"], user_id: params["user_id"])
     @booking.save
 
-    # redirect_to dashboard_path
+    redirect_to profile_path
   end
 
   def edit
