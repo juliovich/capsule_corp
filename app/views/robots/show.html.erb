@@ -1,18 +1,19 @@
 <div class="container">
-  <div class="robot card">
-    <div class="robot-details">
-      <h3><%= @robot.name %></h3>
-      <p><%= @robot.functions %></p>
-      <p><%= @robot.caracteristics %></p>
-    </div>
-    <div class="robot-picture-button">
-      <%= image_tag "BB-8_Clean_legal_line_1024x1024.jpg", id: "robot-picture" %>
-      <div class="price-and-button">
-        <p><%= @robot.price %></p>
-        <a href="#" class="btn btn-info">Book me</a>
+
+    <div class="wrapper">
+      <div class="item">
+        <h3><%= @robot.name %></h3>
+        <p><%= @robot.functions %></p>
+        <p><%= @robot.caracteristics %></p>
       </div>
+      <div class="item">
+        <%= image_tag "BB-8_Clean_legal_line_1024x1024.jpg", id: "robot-picture" %>
+        <div class="price-and-button">
+          <p class="prix">price: <%= @robot.price %> $</p>
+          <a href="#" class="btn btn-info">Book me</a>
+        </div>
     </div>
-  </div>
+</div>
   <hr>
   <div>formulaire saisi avec un collapse sur le bouton "Book me"
     <h4>When do you want to book this robot ?</h4>
