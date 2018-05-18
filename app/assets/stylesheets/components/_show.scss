@@ -1,0 +1,17 @@
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.item {
+    position: relative;
+    top: 10px;
+}
+.prix {
+    position: absolute;
+    left: 0px;
+}
+.btn {
+    position: absolute;
+    right: 0px;
+}
