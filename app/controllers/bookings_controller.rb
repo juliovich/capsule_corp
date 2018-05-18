@@ -13,7 +13,8 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(robot_id: params["robot_id"], user_id: params["user_id"])
+    @booking = Booking.new(booking_params)
+    @booking.user_id = current_user
     @booking.save
 
     redirect_to profile_path
@@ -30,6 +31,9 @@ class BookingsController < ApplicationController
   def destroy
 
   end
+
+  private
+
 
 
 end
